@@ -3,3 +3,12 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+header {
+  display: flex;
+  padding: 24px 0;
+}
+
+.cart {
+  margin-left: auto;
+}
