@@ -14,11 +14,21 @@ export interface Props {
   }[];
 }
 
+const ulStyle = {
+  listStyle: 'none',
+  margin: 0,
+  padding: 0
+};
+
+const liStyle = {
+  margin: '12px 0 0 0'
+};
+
 export function CoursesPage(props: Props) {
   return (
-    <ul>
+    <ul style={ulStyle}>
       {map(props.items, (item, key) => (
-        <li key={key}>
+        <li style={liStyle} key={key}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
           <ButtonBuy id={key} />
