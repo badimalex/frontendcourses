@@ -1,12 +1,10 @@
 import * as React from 'react';
-
 import './style.css';
 
-import courses from '../constants/courses';
-
-import { CoursesPage } from '../components/courses/pages/CoursesPage/index';
+import { CoursesPage } from '../pages/courses/CoursesPage/index';
 import { AppContextProvider } from './context';
 import { Header } from './Header';
+import { list } from './courses';
 
 interface State {
   items: object[];
@@ -15,9 +13,10 @@ interface State {
 class App extends React.PureComponent {
   readonly state: State = { items: [] };
 
-  updateCard = (item: object) => {
+  updateCard = (event: React.MouseEvent<HTMLElement>) => {
+    const index = event.currentTarget.attributes[0].value;
     this.setState({
-      items: this.state.items.concat([item])
+      items: this.state.items.concat([list[index]])
     });
   };
 
@@ -32,7 +31,7 @@ class App extends React.PureComponent {
         <div className="container">
           <Header />
           <div className="row">
-            <CoursesPage items={courses} />
+            <CoursesPage items={list} />
           </div>
         </div>
       </AppContextProvider>
