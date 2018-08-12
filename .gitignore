@@ -13,5 +13,7 @@ npm-debug.log*
 .idea/
 .history/
 /public/config.js
-/dist/main.js
+/dist/
 .vscode/
+.nyc_output
+coverage

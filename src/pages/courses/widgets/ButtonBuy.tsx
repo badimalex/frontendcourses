@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { AppContextConsumer } from '../../../app/context';
 
-export default function IApp(props: any) {
+export default function ButtonBuy(props: any) {
   return (
     <AppContextConsumer>
       {context => (
-        <button data-id={props.id} onClick={context.updateCard}>
+        <button
+          className="button-buy"
+          onClick={() => context.updateCard(props.item)}
+        >
           Add to card
         </button>
       )}

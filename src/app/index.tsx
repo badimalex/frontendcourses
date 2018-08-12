@@ -1,7 +1,6 @@
 import * as React from 'react';
-import './style.css';
 
-import { CoursesPage } from '../pages/courses/CoursesPage/index';
+import CoursesPage from '../pages/courses/CoursesPage/index';
 import { AppContextProvider } from './context';
 import { Header } from './Header';
 import { list } from './courses';
@@ -13,10 +12,9 @@ interface State {
 class App extends React.PureComponent {
   readonly state: State = { items: [] };
 
-  updateCard = (event: React.MouseEvent<HTMLElement>) => {
-    const index = event.currentTarget.attributes[0].value;
+  updateCard = (item: object) => {
     this.setState({
-      items: this.state.items.concat([list[index]])
+      items: this.state.items.concat([item])
     });
   };
 

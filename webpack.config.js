@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.tsx',
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './public'
   },
   module: {
     rules: [

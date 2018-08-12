@@ -24,14 +24,14 @@ const liStyle = {
   margin: '12px 0 0 0'
 };
 
-export function CoursesPage(props: Props) {
+export default function CoursesPage(props: Props) {
   return (
     <ul style={ulStyle}>
       {map(props.items, (item, key) => (
         <li style={liStyle} key={key}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
-          <ButtonBuy id={key} />
+          <ButtonBuy item={item} />
         </li>
       ))}
     </ul>
