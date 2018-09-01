@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import { cartPath, rootPath, coursePath } from './helpers/routes';
+import { cartPath, rootPath, coursePath, productPath } from './helpers/routes';
 import { renderRoutes } from 'react-router-config';
 
 import App from './app/index';
 import CoursePage from './pages/courses/CoursePage';
+import ProductPage from './pages/products/view/Container';
 
 export interface IAppProps {}
 
@@ -25,6 +26,10 @@ export const routes = [
       {
         path: coursePath(),
         component: CoursePage
+      },
+      {
+        path: productPath(),
+        component: ProductPage
       },
       {
         component: NotFound

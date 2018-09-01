@@ -3,7 +3,9 @@ import * as React from 'react';
 import CoursesPage from '../pages/courses/CoursesPage/index';
 import { AppContextProvider } from './context';
 import { Header } from './Header';
+import ProductsPage from '../pages/products/list/Container';
 import { list } from './courses';
+import { Divider } from 'antd';
 
 interface State {
   items: object[];
@@ -29,6 +31,8 @@ class App extends React.PureComponent {
         <div className="container">
           <Header />
           <div className="row">
+            <ProductsPage />
+            <Divider />
             <CoursesPage items={list} />
           </div>
         </div>
