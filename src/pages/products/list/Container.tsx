@@ -1,31 +1,31 @@
-import * as React from 'react';
-const contentful = require('contentful');
+import * as React from "react";
 
-import List from './index';
-
-const client = contentful.createClient({
-  space: 'o2jd7hq1ac7a',
-  accessToken:
-    'b14cdb796bed28faea598c6c18ab89d9d71347eadc387ab82cbc11a89e24d4c0',
-  host: 'preview.contentful.com'
-});
+import List from "./index";
+import { fetchRequest } from "helpers/contentful";
 
 export interface IAppProps {}
 
-interface IState {
-  items: [];
+interface IPost {
+  fields: {
+    title: string;
+    description: string;
+    images: [];
+  };
 }
 
-class IApp extends React.Component<IAppProps, any> {
+interface IState {
+  items: IPost[];
+}
+
+class ProductListContainer extends React.Component<IAppProps, any> {
   public state: IState = {
     items: []
   };
 
   componentDidMount() {
-    client
-      .getEntries({
-        content_type: 'product'
-      })
+    fetchRequest({
+      contentType: "product"
+    })
       .then((response: any) =>
         this.setState({
           items: response.items
@@ -35,10 +35,11 @@ class IApp extends React.Component<IAppProps, any> {
   }
 
   public render() {
+    console.log(this.state);
     return (
       <div>{this.state.items.length && <List items={this.state.items} />}</div>
     );
   }
 }
 
-export default IApp;
+export default ProductListContainer;

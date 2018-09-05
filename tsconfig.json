@@ -7,6 +7,11 @@
     "target": "es2015",
     "jsx": "react",
     "allowJs": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+
+    "baseUrl": "src",
+    "paths": {
+      "helpers/*": ["helpers/*"]
+    }
   }
 }

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Carousel } from 'react-responsive-carousel';
+import * as React from "react";
+import { Carousel } from "react-responsive-carousel";
 
 interface Item {
   title: string;
