@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react';
 
-import List from "./index";
-import { fetchRequest } from "helpers/contentful";
+import List from './index';
+import { fetchRequest } from 'helpers/contentful';
 
 export interface IAppProps {}
 
@@ -24,7 +24,7 @@ class ProductListContainer extends React.Component<IAppProps, any> {
 
   componentDidMount() {
     fetchRequest({
-      contentType: "product"
+      contentType: 'product'
     })
       .then((response: any) =>
         this.setState({

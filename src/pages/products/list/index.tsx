@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { productPath } from "helpers/routes";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { productPath } from 'helpers/routes';
 
 export interface IAppProps {
   items: Item[];
@@ -15,11 +15,11 @@ interface Item {
 }
 
 const style = {
-  listStyle: "none"
+  listStyle: 'none'
 };
 
 const listStyle = {
-  padding: "0"
+  padding: '0'
 };
 
 export default function ProductList(props: IAppProps) {

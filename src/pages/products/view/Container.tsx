@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import Item from "./index";
+import Item from './index';
 
-import { fetchRequest } from "helpers/contentful";
+import { fetchRequest } from 'helpers/contentful';
 
 export interface IAppProps {}
 
@@ -22,7 +22,7 @@ class ProductContainer extends React.Component<any, any> {
   componentDidMount() {
     const id = this.props.match.params.id;
     fetchRequest({
-      contentType: "product"
+      contentType: 'product'
     })
       .then((response: any) =>
         this.setState({
