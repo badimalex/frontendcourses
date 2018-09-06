@@ -22,20 +22,20 @@ class ProductListContainer extends React.Component<IAppProps, any> {
     items: []
   };
 
-  componentDidMount() {
-    fetchRequest({
+  async getData() {
+    const data = await fetchRequest({
       contentType: 'product'
-    })
-      .then((response: any) =>
-        this.setState({
-          items: response.items
-        })
-      )
-      .catch(console.error);
+    });
+    this.setState({
+      items: data.items
+    });
+  }
+
+  componentDidMount() {
+    this.getData();
   }
 
   public render() {
-    console.log(this.state);
     return (
       <div>{this.state.items.length && <List items={this.state.items} />}</div>
     );
