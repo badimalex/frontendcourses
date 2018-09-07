@@ -6,6 +6,12 @@
     "module": "commonjs",
     "target": "es2015",
     "jsx": "react",
-    "allowJs": true
+    "allowJs": true,
+    "typeRoots": ["node_modules/@types"],
+
+    "baseUrl": "src",
+    "paths": {
+      "helpers/*": ["helpers/*"]
+    }
   }
 }

@@ -17,7 +17,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      helpers: path.resolve(__dirname, 'src/helpers')
+    }
   },
   output: {
     filename: 'main.js',
