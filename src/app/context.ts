@@ -2,7 +2,6 @@ import * as React from 'react';
 
 export interface AppContextInterface {
   cartItems: Array<Object>;
-  updateCard(item: object): void;
 }
 
 const ctxt = React.createContext<AppContextInterface | null>(null);
