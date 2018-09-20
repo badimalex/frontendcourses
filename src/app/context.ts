@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface AppContextInterface {
-  cartItems: Array<Object>;
+  cart: Array<Object>;
 }
 
 const ctxt = React.createContext<AppContextInterface | null>(null);

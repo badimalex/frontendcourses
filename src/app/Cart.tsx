@@ -8,7 +8,7 @@ export function Cart(props: CartProps) {
   return (
     <AppContextConsumer>
       {context => (
-        <Badge count={context.cartItems.length}>
+        <Badge count={context.cart.length}>
           <Avatar shape="square" icon="shopping-cart" />
         </Badge>
       )}

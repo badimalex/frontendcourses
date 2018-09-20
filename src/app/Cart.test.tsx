@@ -12,7 +12,7 @@ describe('Cart', () => {
     <div>
       <AppContextProvider
         value={{
-          cartItems: courses
+          cart: courses
         }}
       >
         <Cart />
