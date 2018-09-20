@@ -7,15 +7,12 @@ import courses from '../constants/courses';
 
 import { Cart } from './Cart';
 
-const updateCard = jest.fn();
-
 describe('Cart', () => {
   const app = mount(
     <div>
       <AppContextProvider
         value={{
-          cartItems: courses,
-          updateCard
+          cartItems: courses
         }}
       >
         <Cart />
