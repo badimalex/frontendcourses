@@ -7,6 +7,7 @@ import { renderRoutes } from 'react-router-config';
 import App from './app/index';
 import CoursePage from './pages/courses/CoursePage';
 import ProductPage from './pages/products/view/Container';
+import CartContainer from './pages/cart/Container';
 
 export interface IAppProps {}
 
@@ -21,7 +22,7 @@ export const routes = [
       },
       {
         path: cartPath(),
-        component: CartComponent
+        component: CartContainer
       },
       {
         path: coursePath(),
@@ -48,10 +49,6 @@ function Root(props: any) {
       <Switch>{renderRoutes(props.route.routes)}</Switch>
     </div>
   );
-}
-
-function CartComponent(props: any) {
-  return <div>CartComponent</div>;
 }
 
 function NotFound(props: any) {

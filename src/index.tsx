@@ -11,7 +11,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { routes } from './routes';
 import { getCardState } from './services/products';
-console.log(getCardState());
+
 const store = createStore({
   card: getCardState()
 });

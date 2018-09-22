@@ -7,7 +7,9 @@ import {
   SET_PRODUCTS,
   APP_ERROR,
   ADD_TO_CARD,
-  ACTION_ADD_TO_CARD
+  ACTION_ADD_TO_CARD,
+  ACTION_SUBMIT_FORM,
+  SUBMIT_FORM
 } from '../actions/index';
 
 function* actionProducts() {
@@ -25,9 +27,14 @@ function* addProduct(action: any) {
   yield put({ type: ADD_TO_CARD, payload: action.payload });
 }
 
+function* submitForm(action: any) {
+  yield put({ type: SUBMIT_FORM, payload: action.payload });
+}
+
 function* mySaga() {
   yield takeLatest(ACTION_ADD_TO_CARD, addProduct);
   yield takeLatest(GET_PRODUCTS, actionProducts);
+  yield takeLatest(ACTION_SUBMIT_FORM, submitForm);
 }
 
 export default mySaga;

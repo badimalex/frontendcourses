@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import CoursesPage from '../pages/courses/CoursesPage/index';
 import { AppContextProvider } from './context';
 import { Header } from './Header';
 import { bindActionCreators, Dispatch } from 'redux';
