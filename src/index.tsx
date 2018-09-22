@@ -10,8 +10,11 @@ import './styles.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { routes } from './routes';
-
-const store = createStore();
+import { getCardState } from './services/products';
+console.log(getCardState());
+const store = createStore({
+  card: getCardState()
+});
 
 store.subscribe(() => {
   console.log(store.getState());
