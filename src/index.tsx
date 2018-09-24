@@ -2,22 +2,19 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import createSagaMiddleware from 'redux-saga';
 
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import mySaga from './sagas';
-
-import rootReducer from './reducers';
+import createStore from './store';
 
 import './styles.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { routes } from './routes';
+import { getCardState } from './services/products';
 
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(mySaga);
+const store = createStore({
+  card: getCardState()
+});
 
 store.subscribe(() => {
   console.log(store.getState());

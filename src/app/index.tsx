@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import CoursesPage from '../pages/courses/CoursesPage/index';
 import { AppContextProvider } from './context';
 import { Header } from './Header';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -13,7 +12,7 @@ interface IProps {
   getProducts: Function;
   addToCard: Function;
   items: [];
-  cartItems: [];
+  cart: [];
 }
 
 class App extends React.PureComponent<IProps, any> {
@@ -25,7 +24,7 @@ class App extends React.PureComponent<IProps, any> {
     return (
       <AppContextProvider
         value={{
-          cartItems: this.props.cartItems
+          cart: this.props.cart
         }}
       >
         <div className="container">
@@ -51,7 +50,7 @@ interface IStateProps {
 
 const mapStateToProps = (state: IStateProps) => ({
   items: state.products.items,
-  cartItems: state.card
+  cart: state.card
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
